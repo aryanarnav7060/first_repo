@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 1 - Hello World Python Program</title>
+
+<style>
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --code-bg: #0b0f19;
+    --keyword: #ff7b72;
+    --string: #a5d6ff;
+    --output: #4ade80;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+}
+
+header h1{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+header p{
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.card{
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 35px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h2{
+    margin-bottom: 20px;
+    color: var(--accent-blue);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* Modern Code Box Container */
+.code-wrapper {
+    position: relative;
+    background: var(--code-bg);
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+}
+
+.code-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.code-lang {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--accent-blue);
+    color: #0f172a;
+    border-color: var(--accent-blue);
+}
+
+.code-body {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre;
+    color: var(--text-primary);
+}
+
+/* Syntax Highlighting Utilities */
+.keyword { color: var(--keyword); font-weight: 600; }
+.string { color: var(--string); }
+.output-text { color: var(--output); }
+
+/* Lists styling */
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+ul li {
+    color: #cbd5e1;
+    padding: 8px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+ul li::before {
+    content: "✦";
+    color: var(--accent-blue);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1.5em;
+}
+
+footer{
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--card-border);
+    font-size: 0.95rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Project 1: Hello World Python Program</h1>
+    <p>AFE Laboratory Project | GitHub Repository Demonstration</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates the fundamentals of Python programming.
+            The objective is to create and execute a simple Python script that
+            displays a message to the user. It serves as an introduction to
+            programming concepts, syntax, and code execution.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Python Code</h2>
+        <div class="code-wrapper">
+            <div class="code-header">
+                <span class="code-lang">python</span>
+                <button class="copy-btn" onclick="copyCode()">Copy</button>
+            </div>
+            <pre class="code-body"><code id="python-code"><span class="keyword">print</span>(<span class="string">"Hello World"</span>)</code></pre>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Expected Output</h2>
+        <div class="code-wrapper">
+            <div class="code-header">
+                <span class="code-lang">terminal</span>
+            </div>
+            <pre class="code-body"><code class="output-text">Hello World</code></pre>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>Python 3</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>GitHub</li>
+            <li>GitHub Pages</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Learning Outcomes</h2>
+        <ul>
+            <li>Understanding Python syntax</li>
+            <li>Writing and executing Python programs</li>
+            <li>Using GitHub repositories</li>
+            <li>Publishing project documentation online</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>Developed by Harshil Nair | REVA University | CSIT-A</p>
+</footer>
+
+<script>
+function copyCode() {
+    const codeText = document.getElementById('python-code').innerText;
+    navigator.clipboard.writeText(codeText).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+    }).catch(err => {
+        console.error('Failed to copy code: ', err);
+    });
+}
+</script>
+
+</body>
+</html>

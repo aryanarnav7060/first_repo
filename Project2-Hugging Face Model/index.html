@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugging Face Model Analysis - DiffusionGemma-26B-A4B-it</title>
+
+<style>
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --code-bg: #0b0f19;
+    --keyword: #ff7b72;
+    --string: #a5d6ff;
+    --output: #4ade80;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+}
+
+header h1{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+header p{
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.card{
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 35px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h2{
+    margin-bottom: 20px;
+    color: var(--accent-blue);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.card p strong {
+    color: var(--text-primary);
+}
+
+/* Modern Code Box Container */
+.code-wrapper {
+    position: relative;
+    background: var(--code-bg);
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.code-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.code-lang {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.code-body {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Code', Consolas, Monaco, monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre;
+    color: var(--text-primary);
+}
+
+/* Lists styling */
+ul, ol {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+ul li, ol li {
+    color: #cbd5e1;
+    padding: 8px 0;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+ul li::before {
+    content: "✦";
+    color: var(--accent-blue);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1.5em;
+    flex-shrink: 0;
+}
+
+ol {
+    counter-reset: item-counter;
+}
+
+ol li {
+    counter-increment: item-counter;
+}
+
+ol li::before {
+    content: counter(item-counter) ".";
+    color: var(--accent-blue);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.5em;
+    flex-shrink: 0;
+}
+
+footer{
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--card-border);
+    font-size: 0.95rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hugging Face Model Analysis</h1>
+    <p>Model Deep Dive &amp; Architecture Overview</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Model Identity</h2>
+        <p><strong>Model Name:</strong> DiffusionGemma-26B-A4B-it</p>
+        <p style="margin-top: 10px;"><strong>Organization:</strong> Google DeepMind</p>
+    </div>
+
+    <div class="card">
+        <h2>Model Type</h2>
+        <p>
+            Multimodal Generative Model (Text, Image, and Video Input -> Text Output) with Block-Autoregressive Discrete Diffusion.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Architecture</h2>
+        <ul>
+            <li><strong>Backbone:</strong> Built on the Gemma 4 Mixture-of-Experts (MoE) network architecture (128 fine-grained experts with top-8 routing).</li>
+            <li><strong>Design:</strong> Encoder-decoder setup featuring bidirectional attention over a parallel 256-token generation canvas.</li>
+            <li><strong>Context Window:</strong> Massive 256K token context length.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Parameters</h2>
+        <ul>
+            <li><strong>Total Parameters:</strong> 25.2 Billion</li>
+            <li><strong>Active Parameters:</strong> 3.8 Billion per token (only activates a fraction of the network during inference for lightning-fast speeds).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Dataset &amp; Benchmarks</h2>
+        <ul>
+            <li><strong>Pre-training:</strong> A large-scale, diverse, multimodal corpus spanning web documents, code, mathematics, and images across 140+ languages. Data collection cutoff: January 2025.</li>
+            <li><strong>Safety Filtering:</strong> Rigorous preprocessing including personal data removal, CSAM filtering, and content quality tuning aligned with Google AI principles.</li>
+            <li><strong>Evaluation Benchmarks:</strong> Achieves 77.6% on MMLU Pro, 73.2% on GPQA Diamond, and 70.5% on MATH-Vision.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Training Details &amp; Configuration</h2>
+        <ul>
+            <li><strong>Text Diffusion Head:</strong> Replaces standard sequential next-token prediction with parallel block text generation (stamps text like a printing press rather than a typewriter).</li>
+            <li><strong>Sampling Settings:</strong> Optimized for Entropy-Bounded Denoising with Adaptive Stopping (EB).</li>
+            <li><strong>Denoising Steps:</strong> Maximum of 48 steps per 256-token canvas block.</li>
+            <li><strong>Temperature Schedule:</strong> Linear decay from 0.8 down to 0.4.</li>
+            <li><strong>Entropy Bound Threshold:</strong> 0.1 for token selection; halts generation automatically when canvas entropy falls below 0.005.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Key Use Cases</h2>
+        <ol>
+            <li><strong>Speed-Critical Local Workflows:</strong> Ultra-high-speed interactive local applications (e.g., in-line code or text editing).</li>
+            <li><strong>Multimodal Document Analysis:</strong> OCR, chart reading, UI screen parsing, and large-batch PDF understanding.</li>
+            <li><strong>Video Content Processing:</strong> Analyzing sequential video frames up to 60 seconds long.</li>
+            <li><strong>Agentic Workflows:</strong> Powering AI agents through rapid multi-step native system prompts and thinking modes (<code style="font-size:0.9rem; color:var(--accent-blue); background:rgba(56,189,248,0.1); padding:2px 6px; border-radius:4px;">&lt;|think|&gt;</code>).</li>
+        </ol>
+    </div>
+
+    <div class="card">
+        <h2>Advantages</h2>
+        <ul>
+            <li><strong>Blazing Fast Local Inference:</strong> Generates over 1,000+ tokens per second on a single high-end GPU accelerator.</li>
+            <li><strong>Lightweight Hardware Footprint:</strong> The MoE architecture allows it to easily fit within an 18GB VRAM limit when quantized to 4-bit precision, perfect for consumer GPUs.</li>
+            <li><strong>Parallel Contextual Awareness:</strong> Bidirectional attention allows tokens inside a generated block to look forward and backward, drastically reducing hallucinations during complex infilling.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Conclusion</h2>
+        <p>
+            DiffusionGemma-26B-A4B-it shifts the standard AI decoding bottleneck from memory bandwidth to active compute. While experimental and slightly lower in raw quality compared to a standard dense Gemma 4 model, its parallel text diffusion technique provides a massive look forward into the future of ultra-low-latency, interactive local AI applications.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>Google DeepMind Model Analysis | Technical Review Portfolio</p>
+</footer>
+
+</body>
+</html>

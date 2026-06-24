@@ -15,7 +15,7 @@
 This repository contains five projects developed as part of the Applied Foundations of Engineering (AFE) coursework.
 
 Link for Overview:
-https://aryanarnav.github.io/AFE-Projects_Aryan_R25EJ016/
+https://aryanarnav7060.github.io/AFE-Projects_Aryan_R25EJ016/
 
 ---
 
@@ -59,7 +59,7 @@ Develop and deploy a personal portfolio website.
 
 ### Live Website
 
-https://aryanarnav.github.io/AFE-Projects_Aryan_R25EJ016/Project3-EProfile/
+https://aryanarnav7060.github.io/AFE-Projects_Aryan_R25EJ016/Project3-EProfile/
 
 ### Outcome
 Created and deployed a responsive e-profile website showcasing academic and technical information.
@@ -78,7 +78,7 @@ Design and deploy a modern website related to Artificial Intelligence and Data S
 
 ### Live Website
 
-https://aryanarnav.github.io/AFE-Projects_Aryan_R25EJ016/Project4-AIWebsite/
+https://aryanarnav7060.github.io/AFE-Projects_Aryan_R25EJ016/Project4-AIWebsite/
 
 ### Outcome
 Built a website highlighting AI concepts, applications, and future technologies.

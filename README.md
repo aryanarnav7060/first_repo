@@ -12,7 +12,7 @@
 
 ## Project Overview
 
-This repository contains five projects developed as part of the Applied Foundations of Engineering (AFE) coursework.
+This repository contains four projects developed as part of the Applied Foundations of Engineering (AFE) coursework.
 
 Link for Overview:
 https://aryanarnav7060.github.io/AFE-Projects_Aryan_R25EJ016/
@@ -112,7 +112,6 @@ This project portfolio demonstrates practical experience in:
 - Artificial Intelligence
 - Data Science
 - Web Development
-- Automation Agents
 - Project Deployment
 
 These projects collectively showcase foundational engineering and computing skills developed during the AFE course.

@@ -96,22 +96,3 @@ AFE-Projects_Aryan_R25EJ016
 ├── Project4-AIWebsite
 └── Project5-NewsAgent
 
-GitHub Repository
-https://github.com/AryanArnav/AFE-Projects_Aryan_R25EJ016
-
-Conclusion
-This project portfolio demonstrates practical experience in:
-
-GitHub Version Control
-
-Artificial Intelligence
-
-Data Science
-
-Web Development
-
-Automation Agents
-
-Project Deployment
-
-These projects collectively showcase foundational engineering and computing skills developed during the AFE course.

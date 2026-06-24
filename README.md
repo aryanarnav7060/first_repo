@@ -85,21 +85,6 @@ Built a website highlighting AI concepts, applications, and future technologies.
 
 ---
 
-## Project 5 - AI News Agent
-
-### Objective
-Create an automation agent that collects the latest news and sends the top headlines.
-
-### Technologies
-- Python
-- NewsAPI
-- WhatsApp Automation
-
-### Outcome
-Developed an intelligent news agent capable of collecting and processing daily news headlines.
-
----
-
 ## Repository Structure
 
 ```text
@@ -110,3 +95,23 @@ AFE-Projects_Aryan_R25EJ016
 ├── Project3-EProfile
 ├── Project4-AIWebsite
 └── Project5-NewsAgent
+
+GitHub Repository
+https://github.com/AryanArnav/AFE-Projects_Aryan_R25EJ016
+
+Conclusion
+This project portfolio demonstrates practical experience in:
+
+GitHub Version Control
+
+Artificial Intelligence
+
+Data Science
+
+Web Development
+
+Automation Agents
+
+Project Deployment
+
+These projects collectively showcase foundational engineering and computing skills developed during the AFE course.
